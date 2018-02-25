@@ -1,0 +1,489 @@
+/*selektory do całości*/
+body{
+	margin:0px;
+	padding:0px;
+	font-family:Raleway;
+	font-size:12px;
+	color:414042;
+	line-height: 20px;
+}
+.color{
+	color:#cfb53b;
+}
+.bgcolor{
+	background:#cfb53b;
+}
+.lora{
+	font-Family:Lora;
+}
+h1{
+	font-size:35px;
+	line-height:40px;
+}
+hr{
+	border:1.5px solid #cfb53b;
+	width:30px;
+}
+.anim{
+	display: inline-block;
+    color: #cfb53b;
+    text-decoration: none;
+}
+
+.anim::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #cfb53b;
+    transition: width .3s;
+}
+
+.anim:hover::after {
+    width: 100%;
+    /*transition: width .3s;*/
+}
+
+.separator{
+
+	display:flex;
+	align-items:center;	
+}
+.separator::before,
+.separator::after{
+	content:" ";
+	border:0.5px solid #cfb53b;
+	flex-basis:60px;
+	margin:0 10px;
+}	  
+/*koniec selektorów do całości*/
+
+/*start nav*/
+.nav{
+    height:40px;
+    display:flex;
+	justify-content:space-between;
+	align-items:center;
+    background:#1d504b;
+    position:fixed;
+    width:100%;    
+	padding:5px 0 5px 0;
+	font-size:11px;
+}
+
+.menu ul{
+    list-style:none;
+    font-family:"Lora";
+    text-transform:uppercase;
+    display:flex;
+
+}
+
+.nav a{
+    display:block;
+    padding:10px;
+    color:#ffffff;
+    text-decoration:none;
+}
+
+.logo{
+	background-image:url('../img/logo_small.png');
+	background-repeat:no-repeat;
+	background-position:center center;
+	height:40px;
+	width:100px;
+	padding-left:40px;
+}
+
+.menu_btn{
+	width: 40px;
+	height: 40px;
+	position: relative;
+	padding:10px;
+	margin:0 auto;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: all 1s ease-in-out;
+	cursor: pointer;
+}
+
+/*burger*/
+#menu_btn_container{
+    position:fixed;
+  top:20px;
+  right:10px;
+    width:50px;
+    transition:all 1s ease-out;
+}
+
+
+#menu_btn{
+    cursor:pointer;
+    display:block;
+    transition:all 1s ease-out;
+}
+
+
+#menu_btn span{
+    background: #ffffff;
+    display:block;
+    width:30px;
+    height:2px;
+    margin-bottom: 4px;
+    border-radius:20%;
+    position: relative;
+	top:0;
+	opacity:0.8;
+    transition: all ease-in-out 0.3s;  
+}
+
+#menu_btn_container.open span:nth-child(2),
+#menu_btn_container.open span:nth-child(3){
+    width: 0;
+    opacity:0;    
+}
+
+#menu_btn_container.open span:nth-child(1){
+
+    transform: rotate(-45deg);
+    top:9px;
+}
+
+#menu_btn_container.open span:nth-child(4){
+    transform: rotate(45deg);
+    top:-9px;
+}
+
+@media screen and (min-width: 920px) {
+    .menu {display: block !important;}
+   }
+
+   #menu_btn_container, #menu_btn{
+       display:none;
+   }
+
+@media screen and (max-width:920px){
+    #menu_btn_container, #menu_btn{
+        display:block;
+    }
+    .menu{
+        text-align:center;
+        display:none;
+    }
+     .nav, .nav ul{
+            flex-direction:column;
+            text-align:center;
+     }  
+}
+
+.mousescroll {
+	position: absolute;	
+	left:50%;
+	bottom:30px;
+	margin:auto;	
+	width :34px;
+	height: 55px;
+  }
+.mouse{
+	width: 3px;
+	padding: 5px 10px;
+	height: 25px;
+	border: 2px solid #fff;
+	border-radius: 15px;
+	opacity: 0.75;
+	box-sizing: content-box;
+  }
+	
+  .scroller {
+	width: 3px;
+	height: 10px;
+	border-radius: 25%;
+	background-color: #fff;
+	animation-name: scroll;
+	animation-duration: 2.2s;
+	animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+	animation-iteration-count: infinite;
+  }
+
+  @keyframes scroll {
+	0% { opacity: 0; }
+	10% { transform: translateY(0); opacity: 1; }
+	100% { transform: translateY(15px); opacity: 0;}
+  }
+  
+/*end nav*/
+
+/*start home section*/
+.container_home{
+	background-image:url('../img/home_bg.png');
+	background-size:cover;
+	background-position: top center;
+	background-attachment: fixed;
+	width:auto;
+	height:100vh;
+	display:flex;
+	align-items:center;
+
+}
+.home_txt{
+	font-family:"Lora";
+	text-align:center;
+	color:#ffffff;
+	margin:0 auto;
+}
+/*end home section*/
+
+/*start about section*/
+
+.container_about{
+	background-image:url('../img/about_bg.png');
+	background-size:cover;
+	background-position:center center;
+	width:100%;
+	height:100vh;
+	display:flex;	
+}
+.about_txt{
+	align-self:center;
+	margin:0 60px;
+	padding:20px;
+	text-align:justify;
+	width:500px;
+	
+}
+
+/*end about section*/
+
+/*start offer section*/
+.container_offer{
+	background-image:url('../img/offer_bg.png');
+	background-size:cover;
+	background-position:top center;
+	background-attachment: fixed;
+	width:100%;
+	height:100vh;	
+}
+.container_offer_boxes{
+	display:flex;
+	justify-content:center;
+	flex-direction:row;	
+}
+.offer_header{
+	padding-top:60px;
+	text-align:center;
+}
+
+.offer_box{
+	margin-top:40px;
+	color:#ffffff;
+	padding:20px;
+	flex:1;
+	align-self:flex-start;	
+	text-align:justify;	
+}
+/*end offer section*/
+
+/*start experience section*/
+.container_experience{
+	background-image:url('../img/experience_bg.png');
+	background-size:cover;
+	background-position:center center;
+	width:100%;
+	height:100vh;
+	display:flex;
+}
+
+.experience_txt {
+	align-self:center;
+	margin:0 60px;
+	padding:20px;
+	text-align:justify;
+	width:40%;
+}
+/*end experience section*/
+
+/*start team section*/
+.container_team{
+	background:#ffffff;
+	background-attachment: fixed;
+	width:50%;
+	height:100vh;
+	margin:0px auto;
+	display:flex;
+	align-content:center;
+	align-items:flex-start;	
+}
+.team_box{
+	flex:1;
+	text-align:justify;
+	padding:20px;
+}
+.team_header{
+	margin:0 auto;
+	text-align:center;
+	padding-top:60px;
+}
+.team_photo1{
+	background:url('../img/team_olek.png');
+	background-size:cover;
+	background-repeat:no-repeat;
+	height:250px;
+	margin:0 auto;
+	padding-bottom:0px;	
+}
+
+.team_photo2{
+	background:url('../img/team_robert.png');
+	background-size:cover;
+	background-repeat:no-repeat;
+	height:250px;
+	margin:0 auto;	
+}
+.team_photo_desc{
+	background:#414042;
+	height:20px;
+	width:300px;
+	color:#ffffff;
+	text-align:center;
+	margin:0 auto;
+	padding:0px;
+}
+/*end team section*/
+
+/*start whyourteam section*/
+.container_whyourteam{
+	
+	background-image:url('../img/whyourteam_bg.png');
+	background-attachment: fixed;
+	background-size:cover;
+	background-position:center center;
+	width:100%;
+	height:100vh;	
+}
+.whyourteam_container_boxes{
+	display:flex;
+	align-content:center;
+	align-items:flex-start;
+	flex-direction:row;
+}
+.whyourteam_header{
+	margin:0 auto;
+	padding-top:60px;
+	text-align:center;	
+}
+.whyourteam_box{
+	text-shadow: 1px 1px 2px #050505;
+	text-align:justify;	
+	color:#ffffff;
+	padding:20px;
+	flex:1;
+	align-self:center;
+}
+/*end whyourteam section*/
+
+/*start contact section*/
+.container_contact{
+	background:#f5f5f5;
+	width:100%;
+	height:90vh;
+}
+.contact_header{
+	margin:0 auto;
+	text-align:center;
+	padding-top:60px;
+}
+.container_contact_boxes{
+	width:70%;
+	display:flex;
+	margin:0 auto;
+	align-items:flex-start;
+	flex-direction:row;
+	justify-content:space-between;
+}
+.contact_box{
+	flex:1;
+	text-align:justify;
+	padding:20px;
+	}
+/*end contact section*/
+
+/*start footer*/
+.footer{
+	background:#1d504b;
+	height:auto;
+	width:100%;
+	text-align:center;
+	font-size:11px;
+	color:#ffffff;
+	padding-top:10px;
+}
+/*end footer*/
+
+/*start form*/
+.form input, textarea{	
+	width:100%;
+	border:0px;
+	border-bottom:1px solid ##cfb53b;
+	padding:10px 5px;
+	margin-top:15px;
+	font-family:Raleway;
+	outline:none !important;
+}
+.form_btn{
+	margin-top:15px;
+	padding:10px 0px;
+	width:200px;
+	text-align:center;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	color:#fff;
+	margin:15px auto;
+	cursor:pointer;
+}
+
+/*media queries*/
+@media(max-width:920px){
+	.menu_btn{
+		display:block;
+	}
+
+	.navbar, .nav, .container_offer, .container_offer_boxes, .offer_box, .container_team, .container_whyourteam, .whyourteam_container_boxes, .container_contact_boxes, .container_contact {
+		flex-direction:column;
+		height:auto;		
+	}
+
+	.container_about{
+		background:#f5f5f5;
+		height:auto;
+		text-align:center;
+	}
+	.about_txt{
+		width:100%;
+	}
+	
+	.container_experience{
+		background:#f5f5f5;
+		padding:60px 0px;
+		height:100vh;		
+	}
+	.experience_txt{
+		flex-direction:column;
+		height:auto;
+		text-align:justify;	
+		width:100%;
+	}
+	
+	.container_team{
+		align-items:center;
+	}
+	.container_contact{
+		padding-bottom:20px;
+	}
+}	
+
+
